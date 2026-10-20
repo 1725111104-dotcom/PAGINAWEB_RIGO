@@ -1,0 +1,30 @@
+$def with (mensaje)
+<h1>Simulador de navegador web</h1>
+
+$if mensaje:
+    <p><strong>$mensaje</strong></p>
+
+<h2>Menu</h2>
+
+<h3>Visitar una pagina web</h3>
+<form method="POST" action="/visitar">
+    <input type="text" name="url" placeholder="Ejemplo: www.utec.edu.mx" size="40">
+    <button type="submit">Visitar</button>
+</form>
+
+<h3>Regresar a la pagina anterior</h3>
+<form method="POST" action="/regresar">
+    <button type="submit">Regresar</button>
+</form>
+
+<h3>Mostrar la pagina actual</h3>
+<p><a href="/actual">Ver pagina actual</a></p>
+
+<h3>Mostrar el historial (de la pagina actual hacia atras)</h3>
+<p><a href="/historial">Ver historial</a></p>
+
+<h3>Verificar si el historial esta vacio o eliminarlo</h3>
+<p><a href="/estado">Verificar / eliminar historial</a></p>
+
+<h3>Salir del programa</h3>
+<p><a href="/salir">Salir</a></p>

@@ -1,0 +1,28 @@
+$def with (paginas)
+<h1>Historial de paginas visitadas</h1>
+<p>De la mas reciente (pagina actual) a la mas antigua:</p>
+
+$if paginas:
+    <table border="1" cellpadding="5">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Pagina</th>
+            </tr>
+        </thead>
+        <tbody>
+            $for i, pagina in enumerate(paginas):
+                <tr>
+                    <td>$(i + 1)</td>
+                    <td>
+                        $pagina
+                        $if i == 0:
+                            (pagina actual)
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+$else:
+    <p>El historial esta vacio.</p>
+
+<p><a href="/">Volver al menu</a></p>
